@@ -31,13 +31,16 @@ client.on("message", (message) => {
 
   switch (command) {
     case "ping":
-      client.commands.get('ping').execute(message, args);
+      client.commands.get("ping").execute(message, args);
       break;
     case "translate":
-      client.commands.get('translate').execute(message, args, message.content);
-      break; 
+      client.commands.get("translate").execute(message, args, message.content);
+      break;
+    case "supportedLang":
+      client.commands.get("supportedLang").execute(message, args);
+      break;
     default:
-      message.channel.send("This is not a supported command!")
+      message.channel.send("This is not a supported command!");
       break;
   }
 });
