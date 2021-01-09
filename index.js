@@ -30,17 +30,8 @@ client.on("message", (message) => {
   const command = args.shift().toLowerCase();
 
   switch (command) {
-    case "ping":
-      client.commands.get("ping").execute(message, args);
-      break;
     case "translate":
       client.commands.get("translate").execute(message, args, message.content);
-      break;
-    case "supportedLang":
-      client.commands.get("supportedLang").execute(message, args);
-      break;
-    default:
-      message.channel.send("This is not a supported command!");
       break;
   }
 });
