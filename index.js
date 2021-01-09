@@ -34,6 +34,7 @@ client.on("message", (message) => {
       client.commands.get("translate").execute(message, args, message.content);
       break;
   }
+
 });
 
 client.login(process.env.TOKEN);
