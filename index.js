@@ -29,9 +29,18 @@ client.on("message", (message) => {
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
-  if (command === "ping") {
-    client.commands.get('ping').execute(message, args);
-}
+  switch (command) {
+    case "ping":
+      client.commands.get('ping').execute(message, args);
+      break;
+    case "translate":
+      client.commands.get('translate').execute(message, args, message.content);
+      break; 
+    default:
+      message.channel.send("This is not a supported command!")
+      break;
+  }
+
 });
 
 client.login(process.env.TOKEN);
