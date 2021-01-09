@@ -40,7 +40,6 @@ client.on("message", (message) => {
       message.channel.send("This is not a supported command!")
       break;
   }
-
 });
 
 client.login(process.env.TOKEN);
