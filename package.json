@@ -11,6 +11,7 @@
   "dependencies": {
     "@google-cloud/translate": "^6.0.5",
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "langs": "^2.0.0"
   }
 }
