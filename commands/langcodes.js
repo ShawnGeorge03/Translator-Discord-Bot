@@ -11,7 +11,7 @@ let languagNames = [];
 let languageCode = [];
 
 module.exports = {
-    name: "codes",
+    name: "langcodes",
     description: "Prints out all supported language codes",
     execute(message, args) {
 

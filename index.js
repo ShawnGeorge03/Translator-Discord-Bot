@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-var codes = require('./commands/codes.js');
+var codes = require('./commands/langcodes.js');
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -33,8 +33,11 @@ client.on("message", (message) => {
     case "help":
       client.commands.get("help").execute(message);
       break;
-    case "codes" :
-      client.commands.get("codes").execute(message, args);
+    case "langcodes" :
+      client.commands.get("langcodes").execute(message, args);
+      break;
+    case "detectlang" :
+      client.commands.get("detectlang").execute(message, args);
       break;
     default :
       message.channel.send("Invalid Command!")
