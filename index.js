@@ -19,7 +19,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
   console.log("Translator is online");
-  codes.setSupportedLanguages();
+  //codes.setSupportedLanguages();
 });
 
 client.on("message", (message) => {
@@ -31,13 +31,13 @@ client.on("message", (message) => {
       client.commands.get("translate").execute(message, args, message.content);
       break;
     case "help":
-      client.commands.get("help").execute(message);
+      client.commands.get("help").execute(message, args);
       break;
     case "langCodes" :
       client.commands.get("langCodes").execute(message, args);
       break;
     case "detectLang" :
-      client.commands.get("detectLang").execute(message, args);
+      client.commands.get("detectLang").execute(message, message.content);
       break;
     default :
       message.channel.send("Invalid Command!")
