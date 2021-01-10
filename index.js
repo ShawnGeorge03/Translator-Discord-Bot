@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-var codes = require('./commands/langcodes.js');
+var codes = require('./commands/langCodes.js');
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -25,7 +25,7 @@ client.once("ready", () => {
 client.on("message", (message) => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
   const args = message.content.slice(prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase();
+  const command = args.shift();
   switch (command) {
     case "translate":
       client.commands.get("translate").execute(message, args, message.content);
@@ -33,11 +33,11 @@ client.on("message", (message) => {
     case "help":
       client.commands.get("help").execute(message);
       break;
-    case "langcodes" :
-      client.commands.get("langcodes").execute(message, args);
+    case "langCodes" :
+      client.commands.get("langCodes").execute(message, args);
       break;
-    case "detectlang" :
-      client.commands.get("detectlang").execute(message, args);
+    case "detectLang" :
+      client.commands.get("detectLang").execute(message, args);
       break;
     default :
       message.channel.send("Invalid Command!")
