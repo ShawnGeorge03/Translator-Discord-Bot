@@ -67,7 +67,7 @@ module.exports = {
         return message.channel.send(detectLangText);
       case "!help":
         return message.channel.send(helpText);
-      case "!all":
+      case "all":
         return message.channel.send(
           translateText +
             "\n" +
