@@ -89,7 +89,7 @@ async function translateText(message, text, toLang) {
   } catch (error) {
     console.error(error.details);
     message.channel.send(
-      "The 'to:' argument was invalid use !supportedLang to look for correct language code"
+      "The language code invalid use !codes to look for correct language code"
     );
   }
 }
