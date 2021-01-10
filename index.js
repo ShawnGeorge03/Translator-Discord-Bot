@@ -1,13 +1,11 @@
 require("dotenv").config();
 
+var codes = require('./commands/codes.js');
+
 const Discord = require("discord.js");
-
 const client = new Discord.Client();
-
 const prefix = "!";
-
 const fs = require("fs");
-
 client.commands = new Discord.Collection();
 
 const commandFiles = fs
@@ -21,17 +19,25 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
   console.log("Translator is online");
+  codes.setSupportedLanguages();
 });
 
 client.on("message", (message) => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
-
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
-
   switch (command) {
     case "translate":
       client.commands.get("translate").execute(message, args, message.content);
+      break;
+    case "help":
+      client.commands.get("help").execute(message);
+      break;
+    case "codes" :
+      client.commands.get("codes").execute(message, args);
+      break;
+    default :
+      message.channel.send("Invalid Command!")
       break;
   }
 
