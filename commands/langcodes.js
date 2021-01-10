@@ -35,17 +35,17 @@ module.exports = {
     },
 };
 
-function getSupportedLanguages(message, args) {
-  if(args.length != 0 && args.includes("Chinese")) {
-    var codesForChinese = "The language code for Chinese has the following options and they are" +
-    "Chinese (Simplified)	for which is it is zh-CN or zh  and Chinese (Traditional)	 for which it is zh-TW"; 
+function getSupportedLanguages(message, lang) {
+  if(lang.length != 0 && lang.includes("Chinese")) {
+    var codesForChinese = "The language code for Chinese has the following options and they are " +
+    "Chinese (Simplified)	for which is it is zh-CN or zh and Chinese (Traditional) for which it is zh-TW"; 
     return message.channel.send(codesForChinese);
   } else {
-    var index = languagNames.indexOf(args);
+    var index = languagNames.indexOf(lang);
     if(index === -1){
-      return message.channel.send("The language code for " + args + " does not exist");
+      return message.channel.send("The language code for " + lang + " does not exist");
     }else {
-      return message.channel.send("The language code for " + args + " is " + languageCode[index]);
+      return message.channel.send("The language code for " + lang + " is " + languageCode[index]);
     } 
   }
 }
@@ -64,6 +64,6 @@ module.exports.setSupportedLanguages = async function() {
       languagNames.push(`${language.displayName}`);
     }
   } catch (error) {
-    console.error(error.details);
+    console.error("ERROR : " + error.details);
   } 
 }
