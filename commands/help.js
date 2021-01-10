@@ -3,7 +3,7 @@ module.exports = {
   description: "this is a help command!",
   execute(message, args) {
     const translateText =
-      '!translate to: LANGCODE  " TEXT" \n' +
+      '!translate to: LANGCODE  "TEXT" \n' +
       "Translates the TEXT to the given LANGCODE and prints it to the channel\n" +
       'Example : !translate to: fr "Hello World"\n' +
       "          Translation: Bonjour le monde\n" +
@@ -27,8 +27,8 @@ module.exports = {
       "          Missing text to be detected!\n";
 
     const helpText =
-      "!help cmd: TEXT\n" +
-      "Returns a description for how to use each command\n" +
+      "!help cmd: COMMAND\n" +
+      "Returns a description for how to use the COMMAND if the COMMAND is all prints all supported commands\n" +
       "Example : !help cmd: !translate\n" +
       "Returns the description for how to use !translate command\n";
 
