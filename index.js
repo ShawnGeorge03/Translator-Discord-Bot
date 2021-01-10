@@ -19,7 +19,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
   console.log("Translator is online");
-  //codes.setSupportedLanguages();
+  codes.setSupportedLanguages();
 });
 
 client.on("message", (message) => {
@@ -43,7 +43,6 @@ client.on("message", (message) => {
       message.channel.send("Invalid Command!")
       break;
   }
-
 });
 
 client.login(process.env.TOKEN);
