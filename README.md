@@ -37,11 +37,3 @@ This is a simple Discord Translator Bot which used Cloud Translation API from Go
       <li>Example : !help cmd: !translate</li>
       <li>Returns the description for how to use !translate command</li>
     </ul>
-
-## How to use
-
-
-
-## Add to a server ?
-
-
