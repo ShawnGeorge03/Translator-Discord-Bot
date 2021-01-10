@@ -62,9 +62,6 @@ async function detectLanguage(message, text) {
     let langName = [];
 
     for (const language of response.languages) {
-      console.log(`Language Code: ${language.languageCode}`);
-      console.log(`Confidence: ${language.confidence}`);
-
       langCode.push(`${language.languageCode}`);
       confidence.push(`${language.confidence}`);
     }
